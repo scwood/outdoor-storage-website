@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rocky Mountain Storage</title>
+    <link rel="icon" href="images/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
@@ -29,9 +33,6 @@
         --text: #1a2236;
         --text-muted: #5b6478;
         --radius: 10px;
-      }
-      html {
-        scroll-behavior: smooth;
       }
       body {
         font-family: "DM Sans", sans-serif;
@@ -64,6 +65,19 @@
         gap: 2rem;
         list-style: none;
         align-items: center;
+      }
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: 0;
+        padding: 0.5rem;
+        cursor: pointer;
+        color: var(--navy);
+      }
+      .nav-toggle svg {
+        width: 26px;
+        height: 26px;
+        display: block;
       }
       .nav-links a {
         text-decoration: none;
@@ -274,6 +288,7 @@
       /* SECTIONS */
       section {
         padding: 5rem 2rem;
+        scroll-margin-top: 30px;
       }
       .section-inner {
         max-width: 1100px;
@@ -615,8 +630,8 @@
           padding: 3rem 1.25rem;
           gap: 2rem;
         }
-        .hero-img {
-          display: none;
+        .hero-img img {
+          width: 100%;
         }
         .gallery-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -631,8 +646,38 @@
         nav {
           padding: 0 1.25rem;
         }
+        .nav-toggle {
+          display: block;
+        }
         .nav-links {
-          gap: 1rem;
+          position: absolute;
+          top: 70px;
+          right: 0;
+          left: 0;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          background: var(--white);
+          border-bottom: 1px solid var(--border);
+          padding: 0.5rem 1.25rem 1rem;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+          display: none;
+        }
+        nav.open .nav-links {
+          display: flex;
+        }
+        .nav-links li {
+          width: 100%;
+        }
+        .nav-links a {
+          display: block;
+          padding: 0.75rem 0;
+          font-size: 1rem;
+        }
+        .nav-cta,
+        .nav-pay {
+          text-align: center;
+          margin-top: 0.5rem;
         }
         section {
           padding: 3.5rem 1.25rem;
@@ -642,7 +687,29 @@
   </head>
   <body>
     <!-- NAV -->
-    <nav>
+    <nav id="site-nav">
+      <button
+        class="nav-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        onclick="
+          document.getElementById('site-nav').classList.toggle('open');
+          this.setAttribute(
+            'aria-expanded',
+            document.getElementById('site-nav').classList.contains('open'),
+          );
+        "
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
       <ul class="nav-links">
         <li><a href="#photos">Facility</a></li>
         <li><a href="#units">Unit Sizes</a></li>
@@ -1071,7 +1138,7 @@
               use your own policy (homeowners or renters insurance often covers
               storage), or you can enroll in our affordable tenant insurance at
               move-in through our partner SafeStor. See our
-              <a href="tenant-insurance.pdf" target="_blank"
+              <a href="insurance.pdf" target="_blank"
                 >tenant insurance details (PDF)</a
               >
               for more information.
@@ -1165,14 +1232,7 @@
               </div>
               <div>
                 <strong>Email</strong
-                ><span
-                  ><a
-                    href="/cdn-cgi/l/email-protection"
-                    class="__cf_email__"
-                    data-cfemail="3159545d5d5e71435e525a485c5e445f4550585f42455e435056541f525e5c"
-                    >[email&#160;protected]</a
-                  ></span
-                >
+                ><span>rentals@rockymtnselfstorage.com</span>
               </div>
             </div>
             <div class="contact-detail">
@@ -1280,6 +1340,19 @@
         </div>
       </div>
     </section>
+
+    <script>
+      (function () {
+        var nav = document.getElementById("site-nav");
+        var toggle = nav.querySelector(".nav-toggle");
+        nav.querySelectorAll(".nav-links a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      })();
+    </script>
 
     <!-- FOOTER -->
     <footer>
