@@ -136,7 +136,7 @@
         font-family: "Manrope", sans-serif;
         font-weight: 800;
         letter-spacing: -0.02em;
-        font-size: clamp(2rem, 4vw, 3rem);
+        font-size: clamp(1.75rem, 3.4vw, 2.5rem);
         line-height: 1.15;
         color: var(--navy);
         margin-bottom: 1.25rem;
@@ -145,18 +145,29 @@
         font-style: normal;
         color: var(--green);
       }
-      .hero-text p {
+      .hero-services {
+        list-style: disc;
+        padding-left: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
         font-size: 1.05rem;
         color: var(--text-muted);
-        margin-bottom: 2rem;
-        max-width: 420px;
+      }
+      .hero-service-label {
+        font-weight: 600;
+        color: var(--text);
+      }
+      .hero-service-desc {
+        font-size: 1rem;
       }
       .hero-contact {
         display: flex;
         flex-wrap: wrap;
         gap: 1.25rem;
         margin-bottom: 1.75rem;
-        font-size: 0.98rem;
+        font-size: 1.05rem;
         font-weight: 500;
         color: var(--navy);
       }
@@ -659,13 +670,35 @@
     <!-- HERO -->
     <div class="hero-wrap">
       <div class="hero">
+        <div class="hero-img">
+          <img src="images/logo_big.png" alt="Rocky Mountain Storage" />
+        </div>
         <div class="hero-text">
           <div class="hero-eyebrow">Serving the Front Range</div>
-          <h1>Simple, secure storage — <em>right when you need it.</em></h1>
-          <p>
-            Month-to-month rentals, drive-up access, and a friendly team ready
-            to help you find the right fit.
-          </p>
+          <h1 class="hero-text">
+            Aurora's Home for<br />
+            <em>RV Parking & Self Storage</em>
+          </h1>
+          <ul class="hero-services">
+            <li>
+              <span class="hero-service-label">RV Parking</span> —
+              <span class="hero-service-desc"
+                >Secure outdoor spaces for RVs, trailers, and boats</span
+              >
+            </li>
+            <li>
+              <span class="hero-service-label">Self Storage</span> —
+              <span class="hero-service-desc"
+                >Month-to-month units with drive-up access</span
+              >
+            </li>
+            <li>
+              <span class="hero-service-label">U-Haul Rentals</span> —
+              <span class="hero-service-desc"
+                >Authorized U-Haul dealer — trucks and moving supplies</span
+              >
+            </li>
+          </ul>
           <div class="hero-contact">
             <span class="hero-contact-item">
               <svg viewBox="0 0 16 16" fill="none">
@@ -710,9 +743,6 @@
             >
             <a href="#contact" class="btn-secondary">Contact Us</a>
           </div>
-        </div>
-        <div class="hero-img">
-          <img src="images/logo_big.png" alt="Rocky Mountain Storage" />
         </div>
       </div>
     </div>
@@ -818,157 +848,36 @@
         <div class="gallery-grid">
           <div class="gallery-item">
             <img
-              src="images/SS Unit - Small.jpg"
+              src="images/RMSStreet.jpg"
               alt="Main entrance to Rocky Mountain Storage"
             />
-            <div class="gallery-caption">Main Entrance</div>
+            <div class="gallery-caption">Entrance</div>
           </div>
           <div class="gallery-item">
-            <img src="images/SS - Front Entrance.jpg" alt="Drive-up aisle" />
-            <div class="gallery-caption">Drive-Up Aisle</div>
+            <img src="images/RMSOffice.jpg" alt="Office" />
+            <div class="gallery-caption">Office</div>
           </div>
           <div class="gallery-item">
-            <svg class="placeholder-bg" viewBox="0 0 80 80" fill="none">
-              <path
-                d="M10 10 L40 5 L70 10 L70 70 L10 70 Z"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-              <line
-                x1="10"
-                y1="10"
-                x2="10"
-                y2="70"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-              <line
-                x1="70"
-                y1="10"
-                x2="70"
-                y2="70"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-              <line
-                x1="25"
-                y1="70"
-                x2="25"
-                y2="30"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-              <line
-                x1="55"
-                y1="70"
-                x2="55"
-                y2="30"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-            </svg>
-            <div class="gallery-caption">Indoor Corridor</div>
+            <img src="images/RV Storage.jpg" alt="RV parking" />
+            <div class="gallery-caption">RV parking</div>
           </div>
           <div class="gallery-item">
-            <svg class="placeholder-bg" viewBox="0 0 80 80" fill="none">
-              <rect
-                x="30"
-                y="10"
-                width="20"
-                height="40"
-                rx="2"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-              <line
-                x1="5"
-                y1="50"
-                x2="30"
-                y2="50"
-                stroke="#1e3a6e"
-                stroke-width="2"
-              />
-              <line
-                x1="50"
-                y1="50"
-                x2="75"
-                y2="50"
-                stroke="#1e3a6e"
-                stroke-width="2"
-              />
-              <circle
-                cx="40"
-                cy="30"
-                r="6"
-                stroke="#2e6b35"
-                stroke-width="1.5"
-              />
-              <path
-                d="M5 50 L5 70 L75 70 L75 50"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-            </svg>
-            <div class="gallery-caption">Gated Entry</div>
+            <img src="images/SSInside.jpg" alt="Self storage interior" />
+            <div class="gallery-caption">Self storage interior</div>
           </div>
           <div class="gallery-item">
-            <svg class="placeholder-bg" viewBox="0 0 80 80" fill="none">
-              <rect
-                x="10"
-                y="10"
-                width="60"
-                height="60"
-                rx="2"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-              <rect
-                x="20"
-                y="30"
-                width="18"
-                height="24"
-                rx="1"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-              <rect
-                x="42"
-                y="38"
-                width="18"
-                height="16"
-                rx="1"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-            </svg>
-            <div class="gallery-caption">Unit Interior</div>
+            <img
+              src="images/SSOutsideSm.jpg"
+              alt="Self storage exterior small"
+            />
+            <div class="gallery-caption">Self storage exterior small</div>
           </div>
           <div class="gallery-item">
-            <svg class="placeholder-bg" viewBox="0 0 80 80" fill="none">
-              <rect
-                x="10"
-                y="25"
-                width="60"
-                height="40"
-                rx="2"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-              <path
-                d="M10 25 L40 10 L70 25"
-                stroke="#2e6b35"
-                stroke-width="1.5"
-              />
-              <rect
-                x="30"
-                y="45"
-                width="20"
-                height="20"
-                stroke="#1e3a6e"
-                stroke-width="1.5"
-              />
-            </svg>
-            <div class="gallery-caption">Exterior View</div>
+            <img
+              src="images/SSOutsideLrg.jpg"
+              alt="Self storage exterior large"
+            />
+            <div class="gallery-caption">Self storage exterior large</div>
           </div>
         </div>
       </div>
@@ -1175,6 +1084,14 @@
               food, live animals, or illegal items. We only store recreational
               vehicles 2000 or newer. When in doubt, just ask — we're happy to
               clarify.
+            </div>
+          </details>
+          <details>
+            <summary>How do I cancel my storage?</summary>
+            <div class="faq-body">
+              Send us a written notice (email works great) with at least 2 days
+              notice. Be sure to clear everything from your unit, remove the
+              lock, and notify the office that you are out.
             </div>
           </details>
         </div>
