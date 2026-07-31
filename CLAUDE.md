@@ -4,14 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-Two brochure sites for storage facilities at 17700 E Colfax Ave, Aurora, CO — one per top-level directory:
+Two brochure sites for storage businesses — one per top-level directory:
 
-- `outdoor storage/` — "Outdoor Storage", yellow/ink brand. The one under active development (has the dev-server config; recent commits all touch it).
-- `rocky mountain storage/` — "Rocky Mountain Storage", navy/green brand.
+- `outdoor storage/` — "Outdoor Storage", yellow/ink brand. **Two** facilities: Parker (9575 N Motsenbocker Rd, Parker, CO 80134) and Highlands Ranch (5440 Kelly Ct, Littleton, CO 80125). The one under active development (has the dev-server config; recent commits all touch it).
+- `rocky mountain storage/` — "Rocky Mountain Storage", navy/green brand. A single facility at 17700 E Colfax Ave, Aurora, CO 80011.
 
 Each is a **single self-contained `index.php`** (~1,380 lines): all CSS in one `<style>` block in `<head>`, all markup inline, a small `<script>` at the bottom. There is no build step, no package manager, no framework, no tests. Edits are made directly to `index.php`.
 
-The two files are near-identical in structure and diverge only in brand tokens, copy, and hero logo (`images/logo.jpg` vs `images/logo_big.png`). A structural or copy change requested for "the site" usually means `outdoor storage/index.php`; ask before mirroring it into the other one.
+The two files were near-identical in structure and diverged only in brand tokens, copy, and hero logo (`images/logo.jpg` vs `images/logo_big.png`). They have since split further — see the multi-location handling below. A structural or copy change requested for "the site" usually means `outdoor storage/index.php`; ask before mirroring it into the other one.
 
 ## Running locally
 
@@ -29,9 +29,16 @@ Manual upload via cPanel — see `README.md` (credentials in Bitwarden). Nothing
 
 ## Page structure (both sites)
 
-Fixed anchor IDs are wired into the nav, the footer links, and the mobile-menu close handler: `#photos` (facility gallery), `#units` (unit sizes), `#faq`, `#contact`. Renaming one means updating all of those call sites.
+Fixed anchor IDs are wired into the nav, the footer links, and the mobile-menu close handler: `#photos` (facility gallery), `#units` (unit sizes), `#faq`, `#contact` — plus `#locations` on `outdoor storage/` only. Renaming one means updating all of those call sites.
 
-Two external destinations are repeated in the nav, hero, units section, and footer — U-Haul reservations (`uhaul.com/Locations/...1039317/`) and online payments (`storageaffiliatepayments.com/?locationId=...`). Both sites point at the **same** U-Haul and payment URLs; if one changes, check all four occurrences in each file.
+### External reservation / payment links
+
+The two sites handle these differently:
+
+- **`rocky mountain storage/`** — single location, so the two external destinations are repeated in the nav, hero, units section, and footer: U-Haul reservations (`uhaul.com/Locations/...1039317/`) and online payments (`storageaffiliatepayments.com/?locationId=...`). If one changes, check all four occurrences.
+- **`outdoor storage/`** — two locations, so no CTA links out directly. The nav "Reserve"/"Pay Online" buttons, both hero buttons, the units-section button, and the footer "Reserve" link are all in-page anchors to `#locations`. The four external URLs (Reserve + Pay for each location, on `*.storageunitsoftware.com`) appear **only** inside the two `.location-card`s in that section. Add per-location links there, not to the CTAs. Four `<!-- TODO -->` comments mark links still pointing at a site root instead of a real deep link.
+
+The `outdoor storage/` contact form posts a `location` field (Parker / Highlands Ranch) that server-side `contact.php` must read to include in the notification email.
 
 ## CSS conventions
 

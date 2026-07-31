@@ -178,12 +178,8 @@
       .hero-service-desc {
         font-size: 1rem;
       }
-      .hero-contact-group {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
       .hero-contact {
+        margin-bottom: 1.25rem;
         display: flex;
         flex-wrap: wrap;
         gap: 1.25rem;
@@ -300,10 +296,48 @@
         height: 15px;
       }
 
+      /* LOCATIONS */
+      #locations {
+        background: var(--white);
+      }
+      .locations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+      }
+      .location-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        transition: border-color 0.2s;
+      }
+      .location-card:hover {
+        border-color: var(--ink);
+      }
+      .location-card h3 {
+        font-family: "Manrope", sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        font-size: 1.15rem;
+        color: var(--ink);
+        margin-bottom: 0.3rem;
+      }
+      .location-address {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+      .location-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+
       /* SECTIONS */
       section {
         padding: 5rem 2rem;
-        scroll-margin-top: 30px;
+        /* Must clear the 70px sticky nav, or an anchored heading lands under it. */
+        scroll-margin-top: 80px;
       }
       .section-inner {
         max-width: 1100px;
@@ -728,26 +762,13 @@
         </svg>
       </button>
       <ul class="nav-links">
+        <li><a href="#locations">Locations</a></li>
         <li><a href="#photos">Facility</a></li>
         <li><a href="#units">Unit Sizes</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li>
-          <a
-            href="https://storageaffiliatepayments.com/?locationId=52bf4b8a-74cb-489d-a25d-ac22879a755c"
-            target="_blank"
-            class="nav-pay"
-            >Pay Online</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.uhaul.com/Locations/Self-Storage-near-Aurora-CO-80011/1039317/"
-            target="_blank"
-            class="nav-cta"
-            >Reserve a Unit</a
-          >
-        </li>
+        <li><a href="#locations" class="nav-pay">Pay Online</a></li>
+        <li><a href="#locations" class="nav-cta">Reserve a Unit</a></li>
       </ul>
     </nav>
 
@@ -779,7 +800,7 @@
                   stroke-width="1.5"
                 />
               </svg>
-              <b>17700 E Colfax Ave, Aurora, CO</b>
+              <b>Parker &amp; Highlands Ranch</b>
             </span>
             <a href="tel:+17206163000" class="hero-contact-item">
               <svg viewBox="0 0 16 16" fill="none">
@@ -793,18 +814,8 @@
             </a>
           </div>
           <div class="hero-actions">
-            <a
-              href="https://www.uhaul.com/Locations/Self-Storage-near-Aurora-CO-80011/1039317/"
-              target="_blank"
-              class="btn-primary"
-              >Reserve a Unit</a
-            >
-            <a
-              href="https://storageaffiliatepayments.com/?locationId=52bf4b8a-74cb-489d-a25d-ac22879a755c"
-              target="_blank"
-              class="btn-secondary"
-              >Pay Online</a
-            >
+            <a href="#locations" class="btn-primary">Reserve a Unit</a>
+            <a href="#locations" class="btn-secondary">Pay Online</a>
             <a href="#contact" class="btn-secondary">Contact Us</a>
           </div>
         </div>
@@ -897,6 +908,77 @@
         </div>
       </div>
     </div>
+
+    <!-- LOCATIONS -->
+    <section id="locations">
+      <div class="section-inner">
+        <div class="section-label">Our Locations</div>
+        <h2 class="section-title">Two locations in the south metro</h2>
+        <p class="section-sub">
+          Pick the facility closest to you to reserve a unit or pay your bill.
+        </p>
+        <div class="locations-grid">
+          <div class="location-card">
+            <h3>Parker</h3>
+            <p class="location-address">
+              9575 N Motsenbocker Rd, Parker, CO 80134
+            </p>
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps?q=9575+N+Motsenbocker+Rd,+Parker,+CO+80134&z=15&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Map showing Outdoor Storage at 9575 N Motsenbocker Rd, Parker, CO 80134"
+              ></iframe>
+            </div>
+            <div class="location-actions">
+              <!-- TODO: replace with the Parker reservation URL; site root is a stand-in -->
+              <a
+                href="https://outdoorstorageparker.storageunitsoftware.com/"
+                target="_blank"
+                class="btn-primary"
+                >Reserve a Unit</a
+              >
+              <!-- TODO: replace with the Parker payment URL; site root is a stand-in -->
+              <a
+                href="https://outdoorstorageparker.storageunitsoftware.com/"
+                target="_blank"
+                class="btn-secondary"
+                >Pay Online</a
+              >
+            </div>
+          </div>
+          <div class="location-card">
+            <h3>Highlands Ranch</h3>
+            <p class="location-address">5440 Kelly Ct, Littleton, CO 80125</p>
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps?q=5440+Kelly+Ct,+Littleton,+CO+80125&z=15&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Map showing Outdoor Storage at 5440 Kelly Ct, Littleton, CO 80125"
+              ></iframe>
+            </div>
+            <div class="location-actions">
+              <!-- TODO: replace with the Highlands Ranch reservation URL; site root is a stand-in -->
+              <a
+                href="https://outdoorstoragesantafe.storageunitsoftware.com/"
+                target="_blank"
+                class="btn-primary"
+                >Reserve a Unit</a
+              >
+              <!-- TODO: replace with the Highlands Ranch payment URL; site root is a stand-in -->
+              <a
+                href="https://outdoorstoragesantafe.storageunitsoftware.com/"
+                target="_blank"
+                class="btn-secondary"
+                >Pay Online</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FACILITY PHOTOS -->
     <section id="photos">
@@ -1053,10 +1135,7 @@
           </div>
         </div>
         <div style="margin-top: 2rem">
-          <a
-            href="https://www.uhaul.com/Locations/Self-Storage-near-Aurora-CO-80011/1039317/"
-            target="_blank"
-            class="btn-primary"
+          <a href="#locations" class="btn-primary"
             >Check Availability &amp; Reserve</a
           >
         </div>
@@ -1192,8 +1271,12 @@
                 </svg>
               </div>
               <div>
-                <strong>Address</strong
-                ><span>17700 E Colfax Ave, Aurora, CO 80011</span>
+                <strong>Addresses</strong
+                ><span
+                  ><b>Parker</b> — 9575 N Motsenbocker Rd, Parker, CO 80134<br />
+                  <b>Highlands Ranch</b> — 5440 Kelly Ct, Littleton, CO
+                  80125</span
+                >
               </div>
             </div>
             <div class="contact-detail">
@@ -1255,14 +1338,6 @@
                 ><span>Mon–Fri 8:30am-6pm · Sat 9am–5pm</span>
               </div>
             </div>
-            <div class="contact-map">
-              <iframe
-                src="https://www.google.com/maps?q=17700+E+Colfax+Ave,+Aurora,+CO+80011&z=15&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Map showing Outdoor Storage at 17700 E Colfax Ave, Aurora, CO 80011"
-              ></iframe>
-            </div>
           </div>
           <form class="contact-form" action="contact.php" method="POST">
             <div class="form-row">
@@ -1305,15 +1380,25 @@
                 />
               </div>
             </div>
-            <div class="form-field">
-              <label for="subject">What can we help with?</label
-              ><select id="subject" name="subject">
-                <option value="">Select a topic…</option>
-                <option>Unit availability</option>
-                <option>Pricing &amp; rates</option>
-                <option>Account / billing</option>
-                <option>General question</option>
-              </select>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="location">Which location?</label
+                ><select id="location" name="location">
+                  <option value="">Select a location…</option>
+                  <option>Parker</option>
+                  <option>Highlands Ranch</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="subject">What can we help with?</label
+                ><select id="subject" name="subject">
+                  <option value="">Select a topic…</option>
+                  <option>Unit availability</option>
+                  <option>Pricing &amp; rates</option>
+                  <option>Account / billing</option>
+                  <option>General question</option>
+                </select>
+              </div>
             </div>
             <div class="form-field">
               <label for="message">Message</label
@@ -1356,18 +1441,16 @@
       <div class="footer-inner">
         <div>
           <div style="margin-top: 0.5rem; font-size: 0.82rem">
-            17700 E Colfax Ave, Aurora, CO, 80011
+            9575 N Motsenbocker Rd, Parker, CO 80134<br />
+            5440 Kelly Ct, Littleton, CO 80125
           </div>
         </div>
         <div class="footer-links">
+          <a href="#locations">Locations</a>
           <a href="#photos">Facility</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
-          <a
-            href="https://www.uhaul.com/Locations/Self-Storage-near-Aurora-CO-80011/1039317/"
-            target="_blank"
-            >Reserve</a
-          >
+          <a href="#locations">Reserve</a>
         </div>
         <div style="font-size: 0.82rem">© 2025 Outdoor Storage</div>
       </div>
