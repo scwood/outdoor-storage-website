@@ -178,11 +178,15 @@
       .hero-service-desc {
         font-size: 1rem;
       }
+      .hero-contact-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
       .hero-contact {
         display: flex;
         flex-wrap: wrap;
         gap: 1.25rem;
-        margin-bottom: 1.75rem;
         font-size: 1.05rem;
         font-weight: 500;
         color: var(--ink);
@@ -754,11 +758,11 @@
           <img src="images/logo.jpg" alt="Outdoor Storage" />
         </div>
         <div class="hero-text">
-          <div class="hero-eyebrow">Serving the Front Range</div>
+          <div class="hero-eyebrow">Serving the South Denver Metro Area</div>
           <h1 class="hero-text">
-            Aurora's Home for<br />
-            <em>RV Parking & Self Storage</em>
+            RV & Boat Storage
           </h1>
+          <div>
           <div class="hero-contact">
             <span class="hero-contact-item">
               <svg viewBox="0 0 16 16" fill="none">
