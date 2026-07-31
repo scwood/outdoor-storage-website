@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rocky Mountain Storage</title>
+    <title>Outdoor Storage</title>
+    <meta name="theme-color" content="#fed104" />
     <link rel="icon" href="images/favicon/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
@@ -21,17 +22,22 @@
         padding: 0;
       }
       :root {
-        --navy: #1e3a6e;
-        --navy-dark: #152c55;
-        --navy-light: #eef1f8;
-        --green: #2e6b35;
-        --green-dark: #235228;
-        --green-light: #eaf2eb;
+        /* Brand — sampled from images/logo.jpg */
+        --yellow: #fed104; /* logo field; action color, always with --ink text */
+        --yellow-dark: #e5bc00; /* CTA hover */
+        --yellow-light: #fff8db; /* tint surface */
+        --gold-dark: #8a6a00; /* accent TEXT on white; raw yellow is only 1.47:1 */
+
+        --ink: #1c1c1c; /* structural dark: surfaces and text */
+
         --white: #ffffff;
-        --off-white: #f7f8fa;
-        --border: #dde2ec;
-        --text: #1a2236;
-        --text-muted: #5b6478;
+        --off-white: #faf9f6;
+        --border: #e3e0d8;
+        --text: #1f1d18;
+        --text-muted: #5f5c54;
+
+        --success: #2e6b35; /* semantic, not brand */
+        --error: #b91c1c;
         --radius: 10px;
       }
       body {
@@ -72,7 +78,7 @@
         border: 0;
         padding: 0.5rem;
         cursor: pointer;
-        color: var(--navy);
+        color: var(--ink);
       }
       .nav-toggle svg {
         width: 26px;
@@ -87,21 +93,22 @@
         transition: color 0.2s;
       }
       .nav-links a:hover {
-        color: var(--navy);
+        color: var(--ink);
       }
       .nav-cta {
-        background: var(--navy) !important;
-        color: var(--white) !important;
+        background: var(--yellow) !important;
+        color: var(--ink) !important;
         padding: 0.5rem 1.25rem;
         border-radius: 6px;
         font-weight: 600 !important;
+        border: 1.5px solid var(--ink);
       }
       .nav-cta:hover {
-        background: var(--navy-dark) !important;
+        background: var(--yellow-dark) !important;
       }
       .nav-pay {
-        border: 1.5px solid var(--navy);
-        color: var(--navy) !important;
+        border: 1.5px solid var(--ink);
+        color: var(--ink) !important;
         padding: 0.45rem 1.1rem;
         border-radius: 6px;
         font-weight: 600 !important;
@@ -110,13 +117,8 @@
           color 0.2s;
       }
       .nav-pay:hover {
-        background: var(--navy-light);
-        color: var(--navy) !important;
-      }
-
-      /* HERO */
-      .hero-wrap {
-        background: var(--navy-light);
+        background: var(--yellow-light);
+        color: var(--ink) !important;
       }
       .hero {
         padding: 5rem 2rem;
@@ -135,7 +137,7 @@
         font-weight: 600;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--green);
+        color: var(--gold-dark);
         margin-bottom: 1rem;
       }
       .hero-eyebrow::before {
@@ -143,7 +145,7 @@
         display: block;
         width: 18px;
         height: 2px;
-        background: var(--green);
+        background: var(--yellow);
         border-radius: 1px;
       }
       .hero-text h1 {
@@ -152,12 +154,12 @@
         letter-spacing: -0.02em;
         font-size: clamp(1.75rem, 3.4vw, 2.5rem);
         line-height: 1.15;
-        color: var(--navy);
+        color: var(--ink);
         margin-bottom: 1.25rem;
       }
       .hero-text h1 em {
         font-style: normal;
-        color: var(--green);
+        color: var(--gold-dark);
       }
       .hero-services {
         list-style: disc;
@@ -183,14 +185,14 @@
         margin-bottom: 1.75rem;
         font-size: 1.05rem;
         font-weight: 500;
-        color: var(--navy);
+        color: var(--ink);
       }
       .hero-contact a {
         color: inherit;
         text-decoration: none;
       }
       .hero-contact a:hover {
-        color: var(--green);
+        color: var(--gold-dark);
       }
       .hero-contact-item {
         display: inline-flex;
@@ -208,9 +210,10 @@
         flex-wrap: wrap;
       }
       .btn-primary {
+        border: 1.5px solid var(--ink);
         display: inline-block;
-        background: var(--navy);
-        color: var(--white);
+        background: var(--yellow);
+        color: var(--ink);
         padding: 0.75rem 1.75rem;
         border-radius: 7px;
         text-decoration: none;
@@ -219,12 +222,12 @@
         transition: background 0.2s;
       }
       .btn-primary:hover {
-        background: var(--navy-dark);
+        background: var(--yellow-dark);
       }
       .btn-secondary {
         display: inline-block;
-        border: 1.5px solid var(--navy);
-        color: var(--navy);
+        border: 1.5px solid var(--ink);
+        color: var(--ink);
         padding: 0.75rem 1.75rem;
         border-radius: 7px;
         text-decoration: none;
@@ -235,8 +238,8 @@
           color 0.2s;
       }
       .btn-secondary:hover {
-        background: var(--navy-light);
-        color: var(--navy);
+        background: var(--yellow-light);
+        color: var(--ink);
       }
       .hero-img {
         display: flex;
@@ -244,14 +247,22 @@
         justify-content: center;
       }
       .hero-img img {
-        max-width: 100%;
+        /* Source is 200px wide and an opaque JPEG. The white card makes the logo's
+           own white background read as intentional against the cream hero.
+           box-sizing is border-box, so the cap is 200 (source) + 40 (padding)
+           + 2 (border) = 242px — this keeps the mobile `width: 100%` rule below
+           from upscaling it. Raise the cap when a higher-res logo lands, and drop
+           the background/padding if that file has transparency. */
+        max-width: 242px;
         height: auto;
         display: block;
+        background: var(--white);
+        padding: 1.25rem;
       }
 
       /* FEATURE STRIP */
       .features-strip {
-        background: var(--navy);
+        background: var(--ink);
         padding: 1.5rem 2rem;
       }
       .features-strip-inner {
@@ -302,7 +313,7 @@
         font-weight: 600;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--green);
+        color: var(--gold-dark);
         margin-bottom: 0.65rem;
       }
       .section-label::before {
@@ -310,7 +321,7 @@
         display: block;
         width: 14px;
         height: 2px;
-        background: var(--green);
+        background: var(--yellow);
         border-radius: 1px;
       }
       .section-title {
@@ -318,7 +329,7 @@
         font-weight: 700;
         letter-spacing: -0.02em;
         font-size: clamp(1.6rem, 3vw, 2.2rem);
-        color: var(--navy);
+        color: var(--ink);
         margin-bottom: 0.9rem;
       }
       .section-sub {
@@ -338,14 +349,14 @@
       }
       .gallery-item {
         border-radius: var(--radius);
-        background: #c2cfdf;
+        background: #ded9c9;
         aspect-ratio: 4/3;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
         position: relative;
-        border: 1px solid #adbcd0;
+        border: 1px solid #c9c3ae;
       }
       .gallery-item svg {
         opacity: 0.25;
@@ -361,7 +372,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(transparent, rgba(20, 35, 65, 0.65));
+        background: linear-gradient(transparent, rgba(28, 28, 28, 0.65));
         color: var(--white);
         font-size: 0.8rem;
         font-weight: 500;
@@ -384,20 +395,20 @@
         transition: border-color 0.2s;
       }
       .unit-card:hover {
-        border-color: var(--navy);
+        border-color: var(--ink);
       }
       .unit-card h3 {
         font-family: "Manrope", sans-serif;
         font-weight: 700;
         letter-spacing: -0.01em;
         font-size: 1.15rem;
-        color: var(--navy);
+        color: var(--ink);
         margin-bottom: 0.3rem;
       }
       .unit-card .size {
         font-size: 0.78rem;
         font-weight: 700;
-        color: var(--green);
+        color: var(--gold-dark);
         text-transform: uppercase;
         letter-spacing: 0.08em;
         margin-bottom: 0.75rem;
@@ -410,7 +421,7 @@
       .unit-card .from {
         font-size: 0.9rem;
         font-weight: 600;
-        color: var(--navy);
+        color: var(--ink);
       }
 
       /* FAQ */
@@ -429,7 +440,7 @@
         transition: border-color 0.2s;
       }
       details[open] {
-        border-color: var(--navy);
+        border-color: var(--ink);
       }
       summary {
         padding: 1.1rem 1.25rem;
@@ -452,11 +463,11 @@
         flex-shrink: 0;
       }
       details[open] summary {
-        color: var(--navy);
+        color: var(--ink);
       }
       details[open] summary::after {
         content: "−";
-        color: var(--navy);
+        color: var(--ink);
       }
       .faq-body {
         padding: 0 1.25rem 1.25rem;
@@ -480,7 +491,7 @@
         font-weight: 700;
         letter-spacing: -0.01em;
         font-size: 1.2rem;
-        color: var(--navy);
+        color: var(--ink);
         margin-bottom: 1.5rem;
       }
       .contact-detail {
@@ -494,7 +505,8 @@
         width: 34px;
         height: 34px;
         border-radius: 8px;
-        background: var(--navy-light);
+        background: var(--yellow-light);
+        color: var(--ink);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -508,7 +520,7 @@
       .contact-detail strong {
         display: block;
         font-weight: 600;
-        color: var(--navy);
+        color: var(--ink);
       }
       .contact-detail span {
         color: var(--text-muted);
@@ -549,15 +561,15 @@
       .form-field input:focus,
       .form-field textarea:focus,
       .form-field select:focus {
-        border-color: var(--navy);
+        border-color: var(--ink);
       }
       .form-field textarea {
         resize: vertical;
         min-height: 110px;
       }
       .form-submit {
-        background: var(--navy);
-        color: var(--white);
+        background: var(--yellow);
+        color: var(--ink);
         border: none;
         border-radius: 7px;
         padding: 0.75rem 2rem;
@@ -567,9 +579,10 @@
         cursor: pointer;
         transition: background 0.2s;
         align-self: flex-start;
+        border: 1.5px solid var(--ink);
       }
       .form-submit:hover {
-        background: var(--navy-dark);
+        background: var(--yellow-dark);
       }
       .contact-map {
         margin-top: 1.75rem;
@@ -587,7 +600,7 @@
 
       /* FOOTER */
       footer {
-        background: var(--navy);
+        background: var(--ink);
         color: rgba(255, 255, 255, 0.6);
         padding: 2.5rem 2rem;
         font-size: 0.87rem;
@@ -738,7 +751,7 @@
     <div class="hero-wrap">
       <div class="hero">
         <div class="hero-img">
-          <img src="images/logo_big.png" alt="Rocky Mountain Storage" />
+          <img src="images/logo.jpg" alt="Outdoor Storage" />
         </div>
         <div class="hero-text">
           <div class="hero-eyebrow">Serving the Front Range</div>
@@ -746,26 +759,6 @@
             Aurora's Home for<br />
             <em>RV Parking & Self Storage</em>
           </h1>
-          <ul class="hero-services">
-            <li>
-              <span class="hero-service-label">RV Parking</span> —
-              <span class="hero-service-desc"
-                >Secure outdoor spaces for RVs, trailers, and boats</span
-              >
-            </li>
-            <li>
-              <span class="hero-service-label">Self Storage</span> —
-              <span class="hero-service-desc"
-                >Month-to-month units with drive-up access</span
-              >
-            </li>
-            <li>
-              <span class="hero-service-label">U-Haul Rentals</span> —
-              <span class="hero-service-desc"
-                >Authorized U-Haul dealer — trucks and moving supplies</span
-              >
-            </li>
-          </ul>
           <div class="hero-contact">
             <span class="hero-contact-item">
               <svg viewBox="0 0 16 16" fill="none">
@@ -916,7 +909,7 @@
           <div class="gallery-item">
             <img
               src="images/RMSStreet.jpg"
-              alt="Main entrance to Rocky Mountain Storage"
+              alt="Main entrance to Outdoor Storage"
             />
             <div class="gallery-caption">Entrance</div>
           </div>
@@ -1182,14 +1175,14 @@
                 <svg viewBox="0 0 16 16" fill="none">
                   <path
                     d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5S12.5 9.5 12.5 6C12.5 3.5 10.5 1.5 8 1.5z"
-                    stroke="#1e3a6e"
+                    stroke="currentColor"
                     stroke-width="1.5"
                   />
                   <circle
                     cx="8"
                     cy="6"
                     r="1.5"
-                    stroke="#1e3a6e"
+                    stroke="currentColor"
                     stroke-width="1.5"
                   />
                 </svg>
@@ -1204,7 +1197,7 @@
                 <svg viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3 2.5c0 6.5 4 10.5 10 10.5l.5-2.5-2.5-1-.5 1C8 9.5 6.5 8 5.5 5.5l1-.5L5.5 2.5 3 2.5z"
-                    stroke="#1e3a6e"
+                    stroke="currentColor"
                     stroke-width="1.5"
                   />
                 </svg>
@@ -1220,12 +1213,12 @@
                     width="13"
                     height="9"
                     rx="1.5"
-                    stroke="#1e3a6e"
+                    stroke="currentColor"
                     stroke-width="1.5"
                   />
                   <path
                     d="M1.5 5.5l6.5 4 6.5-4"
-                    stroke="#1e3a6e"
+                    stroke="currentColor"
                     stroke-width="1.5"
                   />
                 </svg>
@@ -1242,12 +1235,12 @@
                     cx="8"
                     cy="8"
                     r="6"
-                    stroke="#1e3a6e"
+                    stroke="currentColor"
                     stroke-width="1.5"
                   />
                   <path
                     d="M8 4v4l3 2"
-                    stroke="#1e3a6e"
+                    stroke="currentColor"
                     stroke-width="1.5"
                     stroke-linecap="round"
                   />
@@ -1263,7 +1256,7 @@
                 src="https://www.google.com/maps?q=17700+E+Colfax+Ave,+Aurora,+CO+80011&z=15&output=embed"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Map showing Rocky Mountain Storage at 17700 E Colfax Ave, Aurora, CO 80011"
+                title="Map showing Outdoor Storage at 17700 E Colfax Ave, Aurora, CO 80011"
               ></iframe>
             </div>
           </div>
@@ -1328,11 +1321,11 @@
             </div>
             <button type="submit" class="form-submit">Send Message</button>
             <?php if (isset($_GET['sent']) && $_GET['sent'] === '1'): ?>
-            <p style="color: var(--green); font-size: 0.9rem; font-weight: 500">
+            <p style="color: var(--success); font-size: 0.9rem; font-weight: 500">
               &#10003; Message sent! We'll be in touch soon.
             </p>
             <?php elseif (isset($_GET['error'])): ?>
-            <p style="color: #b91c1c; font-size: 0.9rem; font-weight: 500">
+            <p style="color: var(--error); font-size: 0.9rem; font-weight: 500">
               Something went wrong. Please try again or call us directly.
             </p>
             <?php endif; ?>
@@ -1372,7 +1365,7 @@
             >Reserve</a
           >
         </div>
-        <div style="font-size: 0.82rem">© 2025 Rocky Mountain Storage</div>
+        <div style="font-size: 0.82rem">© 2025 Outdoor Storage</div>
       </div>
     </footer>
   </body>

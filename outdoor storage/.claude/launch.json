@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "outdoor-storage",
+      "runtimeExecutable": "php",
+      "runtimeArgs": ["-S", "localhost:8321", "-t", "."],
+      "port": 8321
+    }
+  ]
+}
