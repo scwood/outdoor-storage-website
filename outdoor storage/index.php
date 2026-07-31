@@ -563,6 +563,15 @@
       .contact-detail span {
         color: var(--text-muted);
       }
+      .contact-detail a {
+        color: inherit;
+        text-decoration: none;
+      }
+      /* Underline on hover as well as color, so the affordance isn't color-only. */
+      .contact-detail a:hover {
+        color: var(--gold-dark);
+        text-decoration: underline;
+      }
       .contact-form {
         display: flex;
         flex-direction: column;
@@ -802,7 +811,7 @@
               </svg>
               <b>Parker &amp; Highlands Ranch</b>
             </span>
-            <a href="tel:+17206163000" class="hero-contact-item">
+            <a href="tel:+13039056666" class="hero-contact-item">
               <svg viewBox="0 0 16 16" fill="none">
                 <path
                   d="M3 2.5c0 6.5 4 10.5 10 10.5l.5-2.5-2.5-1-.5 1C8 9.5 6.5 8 5.5 5.5l1-.5L5.5 2.5 3 2.5z"
@@ -810,7 +819,7 @@
                   stroke-width="1.5"
                 />
               </svg>
-              <b>(720) 616-3000</b>
+              <b>(303) 905-6666</b>
             </a>
           </div>
           <div class="hero-actions">
@@ -983,29 +992,27 @@
     <!-- FACILITY PHOTOS -->
     <section id="photos">
       <div class="section-inner">
-        <div class="section-label">The Facility</div>
+        <div class="section-label">The Facilities</div>
         <h2 class="section-title">
-          Clean, well-maintained, and easy to access
+          Secure, well maintained, and easy to access
         </h2>
         <p class="section-sub">
-          Our facility is clean, well-lit, and easy to navigate — whether you're
-          moving in or stopping by for the first time.
-        </p>
+          Our facilities are fully fenced, and have 24 hour access. They are well maintained, and easy to navigate - whether you're moving in or stopping by the first time</p>
         <div class="gallery-grid">
           <div class="gallery-item">
             <img
-              src="images/RMSStreet.jpg"
-              alt="Main entrance to Outdoor Storage"
+              src="images/SF entrance.jpg"
+              alt="Highlands Ranch entrance"
             />
-            <div class="gallery-caption">Entrance</div>
+            <div class="gallery-caption">Highlands Ranch Entrance</div>
           </div>
           <div class="gallery-item">
-            <img src="images/RMSOffice.jpg" alt="Office" />
-            <div class="gallery-caption">Office</div>
+            <img src="images/SF gate.jpg" alt="Highlands Ranch gate" />
+            <div class="gallery-caption">Highlands Ranch Gate</div>
           </div>
           <div class="gallery-item">
-            <img src="images/RV Storage.jpg" alt="RV parking" />
-            <div class="gallery-caption">RV parking</div>
+            <img src="images/SF row.jpg" alt="Highlands ranch row" />
+            <div class="gallery-caption">Highlands Ranch Storage Row</div>
           </div>
           <div class="gallery-item">
             <img src="images/SSInside.jpg" alt="Self storage interior" />
@@ -1257,39 +1264,21 @@
               <div class="icon">
                 <svg viewBox="0 0 16 16" fill="none">
                   <path
-                    d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5S12.5 9.5 12.5 6C12.5 3.5 10.5 1.5 8 1.5z"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                  <circle
-                    cx="8"
-                    cy="6"
-                    r="1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  />
-                </svg>
-              </div>
-              <div>
-                <strong>Addresses</strong
-                ><span
-                  ><b>Parker</b> — 9575 N Motsenbocker Rd, Parker, CO 80134<br />
-                  <b>Highlands Ranch</b> — 5440 Kelly Ct, Littleton, CO
-                  80125</span
-                >
-              </div>
-            </div>
-            <div class="contact-detail">
-              <div class="icon">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <path
                     d="M3 2.5c0 6.5 4 10.5 10 10.5l.5-2.5-2.5-1-.5 1C8 9.5 6.5 8 5.5 5.5l1-.5L5.5 2.5 3 2.5z"
                     stroke="currentColor"
                     stroke-width="1.5"
                   />
                 </svg>
               </div>
-              <div><strong>Phone</strong><span>(720) 616-3000</span></div>
+              <div>
+                <strong>Rentals</strong
+                ><span
+                  ><a href="tel:+13039056666">(303) 905-6666</a><br />
+                  <a href="mailto:rentals@outdoorstorage.net"
+                    >rentals@outdoorstorage.net</a
+                  ></span
+                >
+              </div>
             </div>
             <div class="contact-detail">
               <div class="icon">
@@ -1304,38 +1293,42 @@
                     stroke-width="1.5"
                   />
                   <path
-                    d="M1.5 5.5l6.5 4 6.5-4"
+                    d="M1.5 6.5h13"
                     stroke="currentColor"
                     stroke-width="1.5"
                   />
                 </svg>
               </div>
               <div>
-                <strong>Email</strong
-                ><span>rentals@rockymtnselfstorage.com</span>
+                <strong>Billing</strong
+                ><span
+                  ><a href="tel:+13036809300">(303) 680-9300</a><br />
+                  <a href="mailto:office@outdoorstorage.net"
+                    >office@outdoorstorage.net</a
+                  ></span
+                >
               </div>
             </div>
             <div class="contact-detail">
               <div class="icon">
                 <svg viewBox="0 0 16 16" fill="none">
-                  <circle
-                    cx="8"
-                    cy="8"
-                    r="6"
+                  <path
+                    d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5S12.5 9.5 12.5 6C12.5 3.5 10.5 1.5 8 1.5z"
                     stroke="currentColor"
                     stroke-width="1.5"
                   />
-                  <path
-                    d="M8 4v4l3 2"
+                  <circle
+                    cx="8"
+                    cy="6"
+                    r="1.5"
                     stroke="currentColor"
                     stroke-width="1.5"
-                    stroke-linecap="round"
                   />
                 </svg>
               </div>
               <div>
-                <strong>Office Hours</strong
-                ><span>Mon–Fri 8:30am-6pm · Sat 9am–5pm</span>
+                <strong>Payment Address</strong
+                ><span>9457 University Blvd., #401, Highlands Ranch, CO 80126</span>
               </div>
             </div>
           </div>
@@ -1376,7 +1369,7 @@
                   type="tel"
                   id="phone"
                   name="phone"
-                  placeholder="(720) 555-0000"
+                  placeholder="(303) 905-6666"
                 />
               </div>
             </div>
