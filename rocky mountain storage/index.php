@@ -969,7 +969,6 @@
               Great for seasonal items, boxes, and small furniture. About the
               size of a large closet.
             </p>
-            <div class="from">From $34/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">10x10</div>
@@ -978,7 +977,6 @@
               Handles a one- or two-bedroom apartment comfortably. Located in
               our climate controlled building.
             </p>
-            <div class="from">From $113/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">10×15</div>
@@ -987,13 +985,11 @@
               Fits a two bedroom home. We have climate controlled and drive up
               units available.
             </p>
-            <div class="from">From $154/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">15×15</div>
             <h3>Medium</h3>
             <p>Fits a two bedroom home with a little extra.</p>
-            <div class="from">From $154/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">10×30</div>
@@ -1002,7 +998,6 @@
               Fits a full 3–4 bedroom home, or large appliances. We have some
               units that open at both ends.
             </p>
-            <div class="from">From $199/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">15×30</div>
@@ -1011,7 +1006,6 @@
               Fits a full 3–4 bedroom home plus a little extra. We have some
               units that open at both ends.
             </p>
-            <div class="from">From $282/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">10×40</div>
@@ -1019,31 +1013,26 @@
             <p>
               Fits a full 4-5 bedroom home - perfect if you need extra space.
             </p>
-            <div class="from">From $281/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">15×40</div>
             <h3>Extra Large</h3>
             <p>Fits a full 4-5 bedroom home plus a little extra.</p>
-            <div class="from">From $365/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">20' Outdoor Parking</div>
             <h3>Small</h3>
             <p>Great for small trailers.</p>
-            <div class="from">From $60/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">30' Outdoor Parking</div>
             <h3>Medium</h3>
             <p>Popular for longer trailers and boats.</p>
-            <div class="from">From $85/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">40' Outdoor Parking</div>
             <h3>Large</h3>
             <p>Great for longer trailers and 5th Wheels</p>
-            <div class="from">From $110/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">50'Outdoor Parking</div>
@@ -1052,7 +1041,6 @@
               For very long trailers or two smaller trailers parked bumper to
               bumper
             </p>
-            <div class="from">From $125/mo</div>
           </div>
         </div>
         <div style="margin-top: 2rem">
