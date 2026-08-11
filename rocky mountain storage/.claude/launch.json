@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "rocky-mountain-storage",
+      "runtimeExecutable": "php",
+      "runtimeArgs": ["-S", "localhost:8322", "-t", "."],
+      "port": 8322
+    }
+  ]
+}

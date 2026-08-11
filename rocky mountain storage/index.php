@@ -367,6 +367,32 @@
         font-weight: 500;
         padding: 1rem 0.85rem 0.7rem;
       }
+      .facility-maps {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      /* The maps are vector PDFs, so they open in the browser's own viewer
+         rather than rendering inline — an embedded PDF is unreliable on mobile
+         and traps touch scrolling. The link text carries the (PDF) marker
+         because tapping may hand off to a separate app. */
+      .facility-maps a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .facility-maps a svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+      .facility-maps-note {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        flex-basis: 100%;
+      }
 
       /* UNITS */
       #units {
@@ -946,6 +972,42 @@
             />
             <div class="gallery-caption">Self storage exterior large</div>
           </div>
+        </div>
+        <div class="facility-maps">
+          <a
+            href="images/RMS SS Map.pdf"
+            target="_blank"
+            class="btn-secondary"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            Self Storage Lot Map (PDF)
+          </a>
+          <a
+            href="images/RMS RV Map.pdf"
+            target="_blank"
+            class="btn-secondary"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            RV &amp; Trailer Lot Map (PDF)
+          </a>
         </div>
       </div>
     </section>

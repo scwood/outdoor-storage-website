@@ -332,6 +332,38 @@
         flex-wrap: wrap;
         margin-top: 1.5rem;
       }
+      .lot-map {
+        margin-top: 1.25rem;
+        margin-bottom: 0;
+      }
+      .lot-map-body {
+        padding: 0 1.25rem 1.25rem;
+      }
+      .lot-map-body a {
+        display: block;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        line-height: 0;
+      }
+      /* The two lot maps have wildly different shapes — Parker is 5366x1499
+         (3.58:1) and Highlands Ranch is 1914x2327 (0.82:1). A fixed-height box
+         with object-fit: contain letterboxes both into the same footprint, so
+         the tall map can't stretch its location card past the wide one's. */
+      .lot-map-body img {
+        display: block;
+        width: 100%;
+        height: 170px;
+        object-fit: contain;
+        background: var(--white);
+      }
+      /* These maps only show row letters, not space numbers or availability —
+         the label has to say so, and they're unreadable until opened full size. */
+      .lot-map-note {
+        margin-top: 0.6rem;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
 
       /* SECTIONS */
       section {
@@ -858,35 +890,36 @@
         <div class="feature-pill">
           <div class="icon">
             <svg viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6" stroke="white" stroke-width="1.5" />
               <path
-                d="M8 2L2 5v4c0 3 2.5 5.5 6 6.5 3.5-1 6-3.5 6-6.5V5L8 2z"
+                d="M8 4v4l3 2"
                 stroke="white"
                 stroke-width="1.5"
+                stroke-linecap="round"
               />
             </svg>
           </div>
-          Video Surveillance
+          24-Hour Access
         </div>
         <div class="feature-pill">
           <div class="icon">
             <svg viewBox="0 0 16 16" fill="none">
-              <rect
-                x="1"
-                y="4"
-                width="14"
-                height="10"
-                rx="1.5"
+              <path
+                d="M1.5 3h13M1.5 13h13"
                 stroke="white"
                 stroke-width="1.5"
+                stroke-linecap="round"
               />
               <path
-                d="M4 4V3a4 4 0 018 0v1"
+                d="M3.5 8h7M8.75 5.75L11 8l-2.25 2.25"
                 stroke="white"
                 stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               />
             </svg>
           </div>
-          Drive-Up Units
+          Drive-Through Spaces
         </div>
         <div class="feature-pill">
           <div class="icon">
@@ -904,9 +937,17 @@
         <div class="feature-pill">
           <div class="icon">
             <svg viewBox="0 0 16 16" fill="none">
-              <circle cx="8" cy="8" r="6" stroke="white" stroke-width="1.5" />
+              <rect
+                x="1.5"
+                y="2.5"
+                width="13"
+                height="9"
+                rx="1.5"
+                stroke="white"
+                stroke-width="1.5"
+              />
               <path
-                d="M8 4v4l3 2"
+                d="M6 14h4"
                 stroke="white"
                 stroke-width="1.5"
                 stroke-linecap="round"
@@ -940,6 +981,20 @@
                 title="Map showing Outdoor Storage at 9575 N Motsenbocker Rd, Parker, CO 80134"
               ></iframe>
             </div>
+            <details class="lot-map">
+              <summary>View lot map</summary>
+              <div class="lot-map-body">
+                <a href="images/parker-lot-map.png" target="_blank">
+                  <img
+                    src="images/parker-lot-map.png"
+                    alt="Lot layout for the Parker facility, showing parking rows A through H plus row J, and the dump station"
+                  />
+                </a>
+                <p class="lot-map-note">
+                  Row layout only — open full size to zoom in.
+                </p>
+              </div>
+            </details>
             <div class="location-actions">
               <!-- TODO: replace with the Parker reservation URL; site root is a stand-in -->
               <a
@@ -968,6 +1023,20 @@
                 title="Map showing Outdoor Storage at 5440 Kelly Ct, Littleton, CO 80125"
               ></iframe>
             </div>
+            <details class="lot-map">
+              <summary>View lot map</summary>
+              <div class="lot-map-body">
+                <a href="images/highlands-ranch-lot-map.png" target="_blank">
+                  <img
+                    src="images/highlands-ranch-lot-map.png"
+                    alt="Lot layout for the Highlands Ranch facility, showing the upper and lower lots, parking rows A through P, the gate, and the dump station"
+                  />
+                </a>
+                <p class="lot-map-note">
+                  Row layout only — open full size to zoom in.
+                </p>
+              </div>
+            </details>
             <div class="location-actions">
               <!-- TODO: replace with the Highlands Ranch reservation URL; site root is a stand-in -->
               <a
@@ -1015,22 +1084,22 @@
             <div class="gallery-caption">Highlands Ranch Storage Row</div>
           </div>
           <div class="gallery-item">
-            <img src="images/SSInside.jpg" alt="Self storage interior" />
-            <div class="gallery-caption">Self storage interior</div>
+            <img
+              src="images/P entrance.jpg"
+              alt="Parker entrance"
+            />
+            <div class="gallery-caption">Parker Entrance</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/P gate.jpg" alt="Parker gate" />
+            <div class="gallery-caption">Parker Gate</div>
           </div>
           <div class="gallery-item">
             <img
-              src="images/SSOutsideSm.jpg"
-              alt="Self storage exterior small"
+              src="images/P row.jpg"
+              alt="Parker row"
             />
-            <div class="gallery-caption">Self storage exterior small</div>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="images/SSOutsideLrg.jpg"
-              alt="Self storage exterior large"
-            />
-            <div class="gallery-caption">Self storage exterior large</div>
+            <div class="gallery-caption">Parker Storage Row</div>
           </div>
         </div>
       </div>
@@ -1042,94 +1111,23 @@
         <div class="section-label">Unit Sizes</div>
         <h2 class="section-title">Find the right fit</h2>
         <p class="section-sub">
-          We offer a range of unit sizes to fit everything from a few boxes to a
-          full household. Not sure what you need? Give us a call — we're happy
-          to help. Want to store a recreational vehicle? We've got lots of room
-          for those as well.
+          We can accommodate recreational vehicles up to 50 feet in length. Store your trailer, boat, or RV with us today!
         </p>
         <div class="units-grid">
-          <div class="unit-card">
-            <div class="size">4x8</div>
-            <h3>Small</h3>
-            <p>
-              Great for seasonal items, boxes, and small furniture. About the
-              size of a large closet.
-            </p>
-            <div class="from">From $34/mo</div>
-          </div>
-          <div class="unit-card">
-            <div class="size">10x10</div>
-            <h3>Small</h3>
-            <p>
-              Handles a one- or two-bedroom apartment comfortably. Located in
-              our climate controlled building.
-            </p>
-            <div class="from">From $113/mo</div>
-          </div>
-          <div class="unit-card">
-            <div class="size">10×15</div>
-            <h3>Medium</h3>
-            <p>
-              Fits a two bedroom home. We have climate controlled and drive up
-              units available.
-            </p>
-            <div class="from">From $154/mo</div>
-          </div>
-          <div class="unit-card">
-            <div class="size">15×15</div>
-            <h3>Medium</h3>
-            <p>Fits a two bedroom home with a little extra.</p>
-            <div class="from">From $154/mo</div>
-          </div>
-          <div class="unit-card">
-            <div class="size">10×30</div>
-            <h3>Large</h3>
-            <p>
-              Fits a full 3–4 bedroom home, or large appliances. We have some
-              units that open at both ends.
-            </p>
-            <div class="from">From $199/mo</div>
-          </div>
-          <div class="unit-card">
-            <div class="size">15×30</div>
-            <h3>Large</h3>
-            <p>
-              Fits a full 3–4 bedroom home plus a little extra. We have some
-              units that open at both ends.
-            </p>
-            <div class="from">From $282/mo</div>
-          </div>
-          <div class="unit-card">
-            <div class="size">10×40</div>
-            <h3>Extra Large</h3>
-            <p>
-              Fits a full 4-5 bedroom home - perfect if you need extra space.
-            </p>
-            <div class="from">From $281/mo</div>
-          </div>
-          <div class="unit-card">
-            <div class="size">15×40</div>
-            <h3>Extra Large</h3>
-            <p>Fits a full 4-5 bedroom home plus a little extra.</p>
-            <div class="from">From $365/mo</div>
-          </div>
           <div class="unit-card">
             <div class="size">20' Outdoor Parking</div>
             <h3>Small</h3>
             <p>Great for small trailers.</p>
-            <div class="from">From $60/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">30' Outdoor Parking</div>
             <h3>Medium</h3>
             <p>Popular for longer trailers and boats.</p>
-            <div class="from">From $85/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">40' Outdoor Parking</div>
             <h3>Large</h3>
             <p>Great for longer trailers and 5th Wheels</p>
-            <div class="from">From $110/mo</div>
           </div>
           <div class="unit-card">
             <div class="size">50'Outdoor Parking</div>
@@ -1138,7 +1136,6 @@
               For very long trailers or two smaller trailers parked bumper to
               bumper
             </p>
-            <div class="from">From $125/mo</div>
           </div>
         </div>
         <div style="margin-top: 2rem">
@@ -1161,10 +1158,7 @@
           <details>
             <summary>What are your access hours?</summary>
             <div class="faq-body">
-              Our facility is accessible from 6am-10pm, 7 days a week with your
-              personal gate code. The office is open Monday–Friday 8:30am-6pm,
-              Saturday 9am-5pm.
-            </div>
+              Our facility is accessible 24 hours a day, 365 days a year.</div>
           </details>
           <details>
             <summary>Do you require a long-term contract?</summary>
@@ -1177,54 +1171,24 @@
           <details>
             <summary>Is my stuff safe?</summary>
             <div class="faq-body">
-              We have video surveillance, a fully fenced facility, and a gated
-              entry that requires a personal access code. We take the security
-              of your belongings seriously.
+              We have video surveillance at the entrance, a fully fenced
+              facility, and a gated entry that requires a personal access code.
+              We take the security of your belongings seriously.
             </div>
           </details>
           <details>
-            <summary>Do I need to bring my own lock?</summary>
+            <summary>Do you have drive through spaces?</summary>
             <div class="faq-body">
-              You're welcome to bring your own disc lock, or you can purchase
-              one at our office. We recommend a high-quality disc-style padlock
-              for best security.
-            </div>
-          </details>
-          <details>
-            <summary>Can I drive up directly to my unit?</summary>
-            <div class="faq-body">
-              Many of our units are drive-up accessible, making loading and
-              unloading a lot easier. Indoor units are accessed via a wide
-              hallway with a cart available for use.
-            </div>
-          </details>
-          <details>
-            <summary>Do you offer climate-controlled units?</summary>
-            <div class="faq-body">
-              Yes — we have a selection of climate-controlled indoor units,
-              which are ideal for furniture, electronics, documents, or anything
-              sensitive to temperature and humidity swings.
+              Many of our spaces are drive through accessible. When making a
+              reservation, choose the drive through option.
             </div>
           </details>
           <details>
             <summary>How do I pay?</summary>
             <div class="faq-body">
-              You can pay online through our tenant portal, by phone, or in
-              person at the office. We accept major credit cards and ACH
-              payments. Autopay is available and encouraged!
-            </div>
-          </details>
-          <details>
-            <summary>Do you offer tenant insurance?</summary>
-            <div class="faq-body">
-              Insurance is required for all stored belongings. You're welcome to
-              use your own policy (homeowners or renters insurance often covers
-              storage), or you can enroll in our affordable tenant insurance at
-              move-in through our partner SafeStor. See our
-              <a href="insurance.pdf" target="_blank"
-                >tenant insurance details (PDF)</a
-              >
-              for more information.
+              You can pay online through our tenant portal, by phone, or by
+              mail.  We accept major credit cards and ACH payments. Autopay is
+              available and encouraged!
             </div>
           </details>
           <details>
@@ -1240,14 +1204,13 @@
             <summary>How do I cancel my storage?</summary>
             <div class="faq-body">
               Send us a written notice (email works great) with at least 2 days
-              notice. Be sure to clear everything from your unit, remove the
-              lock, and notify the office that you are out.
+              notice. Be sure to clear everything from your space.
             </div>
           </details>
         </div>
       </div>
     </section>
-
+    
     <!-- CONTACT -->
     <section id="contact">
       <div class="section-inner">
