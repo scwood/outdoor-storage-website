@@ -119,7 +119,7 @@
         background: var(--navy-light);
       }
       .hero {
-        padding: 5rem 2rem;
+        padding: 4rem 2rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
@@ -240,13 +240,38 @@
       }
       .hero-img {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 2rem;
       }
       .hero-img img {
         max-width: 100%;
         height: auto;
         display: block;
+      }
+      /* logo-hero.png is logo_big.png cropped to the artwork's bounding box —
+         the source carried ~385px of transparent padding on all four sides,
+         which is why the logo used to float in dead space that no rule here
+         could reach. Keep it trimmed so the `gap` above is the only thing
+         setting the distance to the badge. 380px renders the artwork slightly
+         larger than the old padded 494px box did, in less vertical room. */
+      .hero-logo {
+        width: 380px;
+      }
+      /* The dealer logo is an opaque white JPEG, so it gets a white card to sit
+         on — dropped straight onto the --navy-light hero it reads as a stray
+         rectangle. The 240px cap keeps the badge visibly secondary to the logo
+         above it and stops the mobile `.hero-img img { width: 100% }` rule from
+         upscaling it — the image still lands well under the 560px source width,
+         so it stays crisp on 2x displays. */
+      .hero-badge {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        padding: 0.85rem 1.1rem;
+        width: 100%;
+        max-width: 240px;
       }
 
       /* FEATURE STRIP */
@@ -764,7 +789,21 @@
     <div class="hero-wrap">
       <div class="hero">
         <div class="hero-img">
-          <img src="images/logo_big.png" alt="Rocky Mountain Storage" />
+          <img
+            src="images/logo-hero.png"
+            alt="Rocky Mountain Storage"
+            class="hero-logo"
+            width="2035"
+            height="1531"
+          />
+          <div class="hero-badge">
+            <img
+              src="images/uhaul-dealer.jpg"
+              alt="U-Haul Authorized Dealer"
+              width="560"
+              height="230"
+            />
+          </div>
         </div>
         <div class="hero-text">
           <div class="hero-eyebrow">Serving the Front Range</div>
