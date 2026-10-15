@@ -808,7 +808,15 @@
         <li><a href="#units">Unit Sizes</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#locations" class="nav-pay">Pay Online</a></li>
+        <li>
+          <a
+            href="https://www.uhaul.com/Auth/OrderLookUp/"
+            target="_blank"
+            rel="noopener"
+            class="nav-pay"
+            >Login</a
+          >
+        </li>
         <li><a href="#locations" class="nav-cta">Reserve a Unit</a></li>
       </ul>
     </nav>
@@ -856,7 +864,6 @@
           </div>
           <div class="hero-actions">
             <a href="#locations" class="btn-primary">Reserve a Unit</a>
-            <a href="#locations" class="btn-secondary">Pay Online</a>
             <a href="#contact" class="btn-secondary">Contact Us</a>
           </div>
         </div>
@@ -996,16 +1003,14 @@
               </div>
             </details>
             <div class="location-actions">
-              <!-- TODO: replace with the Parker reservation URL; site root is a stand-in -->
               <a
-                href="https://outdoorstorageparker.storageunitsoftware.com/"
+                href="https://www.uhaul.com/Locations/Self-Storage-near-Parker-CO-80134/1039663/"
                 target="_blank"
                 class="btn-primary"
                 >Reserve a Unit</a
               >
-              <!-- TODO: replace with the Parker payment URL; site root is a stand-in -->
               <a
-                href="https://outdoorstorageparker.storageunitsoftware.com/"
+                href="https://storageaffiliatepayments.com/?locationId=78dc2820-c177-4544-b43b-269da4dcce12"
                 target="_blank"
                 class="btn-secondary"
                 >Pay Online</a
